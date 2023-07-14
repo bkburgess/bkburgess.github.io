@@ -1,0 +1,30 @@
+body {
+    color:rgb(198, 201, 172);
+    background-color: rgb(37, 37, 37);
+    /*font-family: "Noto Sans Nandinagari", sans-serif;*/
+    /*font-family: "Roboto Mono", sans-serif;*/
+    font-family: "Syne Mono", monospace;
+    margin: auto;
+    max-width: 900px;
+    min-width: 600px;
+}
+h1 {
+    font-size: 3em;
+    padding-top: 50px;
+}
+a {
+    color:rgb(198, 201, 172);
+}
+.project {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+.summary {
+    padding-left: 30px;
+}
+img {
+    width: 5%;
+}
+.social {
+    padding-right: 30px;
+}
