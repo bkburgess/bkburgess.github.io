@@ -19,6 +19,13 @@ a {
     padding-top: 30px;
     padding-left: 0px;
 }
+.code {
+    /* color:rgb(221, 226, 159); */
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 30px;
+    font-family: "Light 300", monospace;
+}
 .summary {
     padding-left: 30px;
 }

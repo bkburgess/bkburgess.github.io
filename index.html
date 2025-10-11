@@ -47,9 +47,40 @@
                         <li>It currently outputs a new iteration of the plot, which I would like to change to an animation that is easier to use.</li>
                     </ul> 
                     To run this program, you just need to invoke it from the command line with<br>
-                    python "path/to/file/exploratory_opt.py"<br>
+                    <div class="code">
+                        $ python "path/to/file/exploratory_opt.py"<br>
+                    </div>
 
                     You can also provide optional command line arguments that let the user to change the size of the domain, the complexity of the standin target function, and the number of iteration.
+                </p>
+            </div>
+            <div class="project">
+                <h2><a href="https://github.com/bkburgess/PID">PID Controller</a></h2>
+                <p class="summary">
+                    <img src="images/project_examples/PIDsmack.png" style="width: 50%" alt="Plot showing the 1d position of a robot relative to a stationary target over time, and its recovery from a sudden interference"><br>
+                    <img src="images/project_examples/PIDsin.png" style="width: 50%" alt="Plot showing the 1d position of a robot relative to a moving target over time"><br>
+                    <caption></caption>
+                    <h3>PID Overview</h3>
+                        PID controllers are widely used in robotics, where they can determine how to get the robot, or a part of a robot to the desired state quickly, efficiently, and stably, even in the face of interference and outside forces. The controller determines how much force to apply in which direction. To do this they consist of essentially three parts:<br>
+
+                        Proportional - this just measures the difference between where the robot is, and where it's trying to get to, and provides a force proportional to that distance. If this were the only component, then the robot would oscillate around the target point with amplitude equal to the initial difference, rather than stay consistently at or near the target.<br>
+                        Derivative - this measures how much progress the robot has made in each computation cycle, which helps the robot avoid overshooting or oscillating around the target, by providing a slight damping effect proportional to the progress it's already made.<br>
+                        Integrative - this measures how much progress the robot has gone, and is primarily useful for compensating for outside effects like external forces, or changes in the robots mass, which affect the relationship between the robot's force applied and the motion that results. This can sometimes be left out in simpler application<br>
+
+                        Each of these components is multiplied by a tuned gain value to determine the influence that they each have on the force applied.
+                    <h3>Further work to do:</h3>
+                    <ul>
+                        <li>The present version is single dimensional, I'd like to expand it to multiple dimensions, preferably an arbitrary number</li>
+                        <li>I'd like to turn it into a class that can actually be applied to a larger project</li>
+                        <li>Reimplement it in C++ for my own learning</li>
+                        <li>Implement one or more methods for automatically tuning the gains</li>
+                    </ul> 
+                    To run this program, you just need to invoke it from the command line with<br>
+                    <div class="code">
+                        $ python "path/to/file/PID_1d_mass.py"<br>
+                    </div>
+
+                    You can also provide optional command line arguments that let the user to change the initial position, duration, the external forces, the behavior of the target, and/or the gains.
                 </p>
             </div>
             <div class="project">
