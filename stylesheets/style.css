@@ -26,6 +26,11 @@ a {
     padding-left: 30px;
     font-family: "Light 300", monospace;
 }
+.column {
+    float: left;
+    width: 48%;
+    padding: 5px;
+}
 .summary {
     padding-left: 30px;
 }
