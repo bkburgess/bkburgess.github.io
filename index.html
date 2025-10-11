@@ -17,6 +17,41 @@
             </p>
             <span class="social"><a href="https://github.com/bkburgess"><img src="./images/github-mark/github-mark/github-mark-white.png" alt="github icon"></a></span>
             <span class="social"><a href="https://www.linkedin.com/in/bryceburgess/"><img src="./images/LinkedIn-Logos/LinkedIn-Logos/In/Digital/White/2x/In-White-128@2x.png" alt="linkedin icon"></a></span>
+            <!--<span class="social"><a href="https://www.kaggle.com/bkburgess"><img src="./images/Kaggle-Logos/kaggle-logo-transparent-300.png" alt="kaggle icon"></a></span>-->
+            <div class="project">
+                <h2><a href="https://github.com/bkburgess/BayesianOptimization">Exploratory Optimization</a></h2>
+                <p class="summary">
+                    <img src="images/project_examples/ExploratoryOptimization.png" style="width: 50%" alt="Plot of a complicated smooth curve, with sampled points highlighted, and a curve showing where to search next"><br>
+                    <caption>Example image of what exploratory optimization is doing in one dimension
+                        The above plot is an example of what it looks like. The red curve is the true line that it's trying to search, and so is unknown to the actual algorithm.
+                        The compound blue curve is the acquisition function that it uses to determine where to search next, and the green triangles are the points it has already sampled and adjusted the blue curve to fit.
+                        The vertical black line shows where it will make its next guess, determined by the maximum of the acquisition function that isn't already within the samples.
+                    </caption>
+                    <h3>Bayesian Optimization Overview</h3>
+                    Bayesian Optimization is a search algorithm for finding the best place to sample for an expensive to calculate function. One of the most common applications for this method is in tuning the hyperparameters of machine learning models such as neural networks.
+                    It usually uses a small sample of points to shepherd a collection tens of distinct smooth curves. 
+                    Then for each point in the domain, you calculate the variance in the values given by the curves. 
+                    Because the curves converge at known points, and tend to spread out in between known points, the algorithm can balance prioritizing its search between exploiting the best values found so far, against the value of exploring new areas to gather more information. 
+                    Additionally, this balance can be tuned with a single input parameter.<br>
+                    
+                    <h3>Exploratory Optimization</h3>
+                    The exploratory_opt.py file was inspired by bayesian optimization, but instead of calculating the spread of a collection of smooth function, it just fits any one of several convex functions to pass through each pair of adjacent sampled points.
+                    The resulting piecewise function can be used to achieve a similar overall result that balances exploiting the best samples found so far against exploring unknown areas, again tunable with a single parameter.
+                    This implementation uses a standin function for the expensive function that it's supposed to be applied to, by composing several sine waves of different amplitudes and frequencies.
+
+                    <h3>Further work to do:</h3>
+                    <ul>
+                        <li>Benchmark the Exploratory Optimization against Bayesian Optimization, boh for time and memory complexity.</li>
+                        <li>This method requires having the samples at the outer bounds of the domain space, since it needs to compute a function between two known points. I'd like to find a way to modify it to not need this if possible.</li>
+                        <li>This implementation currently only applies to one dimensional data in a discrete domain, and I'd like to expand it to work for n dimensions and for continuous space.</li>
+                        <li>It currently outputs a new iteration of the plot, which I would like to change to an animation that is easier to use.</li>
+                    </ul> 
+                    To run this program, you just need to invoke it from the command line with<br>
+                    python "path/to/file/exploratory_opt.py"<br>
+
+                    You can also provide optional command line arguments that let the user to change the size of the domain, the complexity of the standin target function, and the number of iteration.
+                </p>
+            </div>
             <div class="project">
                 <h2><a href="https://github.com/bkburgess/PatientChoice">Patient Choice</a></h2>
                 <p class="summary">
