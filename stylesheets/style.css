@@ -26,11 +26,11 @@ a {
     padding-left: 30px;
     font-family: "Light 300", monospace;
 }
-/* .column {
+.img_float {
     float: left;
-    width: 48%;
-    padding: 5px;
-} */
+    width: 446px;
+    padding: 2px
+}
 .summary {
     padding-left: 30px;
 }
