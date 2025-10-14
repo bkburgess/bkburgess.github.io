@@ -94,6 +94,35 @@
                 </p>
             </div>
             <div class="project">
+                <h2><a href="https://github.com/bkburgess/Epidemiology">Epidemiology</a></h2>
+                <div class="skills">Skills/Technologies: Python</div>
+                <p class="summary">
+                    <!--TODO: how can I get these two images to be placed side by side?  -->
+                    <div>
+                        <img src="images/project_examples/SIRD.png" style="width: 50%" alt="Plot showing the status of the population over time during a disease"><br>
+                    </div>
+                    <caption>Plot showing the status of the population over time during a disease.</caption>
+                    <h3>SIRD</h3>
+                        This repository is a place for me to work on epidemiology simulations, primarily centered on using the SIRD model.
+
+                        SIRD stands for Susceptible, Infected, Recovered, and Dead. The idea is that the population of a a densely populated area will fall into one of these four categories at any given time, and we can use estimates and heuristics to model how the disease progresses over time.
+                        Further work
+
+                    <ul>
+                        <li>Expand this to consider multiple cities simultaneously with travel between them</li>
+                        <li>Consider multiple diseases simultaneously</li>
+                        <li>Enable "researching" the disease to improve treatment to it</li>
+                        <li>Find an elegant way to plot the more sophisicated setup, preferably real time</li>
+                    </ul> 
+                    To run this program, you just need to invoke it from the command line with<br>
+                    <div class="code">
+                        $ python "path/to/file/SIRD.py"<br>
+                    </div>
+
+                    You can also provide optional command line arguments that let the user to change the initial number of people in each status and the duration.
+                </p>
+            </div>
+            <div class="project">
                 <h2><a href="https://github.com/bkburgess/PatientChoice">Patient Choice</a></h2>
                 <div class="skills">Skills/Technologies: Python, Pandas</div>
                 <p class="summary">
@@ -143,9 +172,13 @@
             </div>
             <div class="project">
                 <h2><a href="https://github.com/bkburgess/DragonCurve">Dragon Curve Fractal</a></h2>
-                <div class="skills">Skills/Technologies: Python, BeautifulSoup, numpy, requests</div>
+                <div class="skills">Skills/Technologies: Python</div>
+                <img src="images/project_examples/DragonCurve.png" style="width: 50%" alt="The dragon curve fractal"><br>
                 <p class="summary">
-                    Creates the dragon curve fractal for a chosen number of steps in a Jupyter Notebook
+                    This script generates the dragon fractal, which is the logical extension of folding a piece of paper in half over and over, and then unfurling it
+                    so that each of the bends is 90 degrees. To do this, this script encodes directions as a string of numbers, and recurrently duplicates and rotates
+                    the string to form a new string which represents the next iteration of the fractal. It finally then needs to decode the resulting string back into 
+                    directions that can be used to plot the fractal itself.
                 </p>
             </div>
             <div class="project">
