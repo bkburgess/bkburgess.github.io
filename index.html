@@ -37,13 +37,13 @@
                     Additionally, this balance can be tuned with a single input parameter.<br>
                     
                     <h3>Exploratory Optimization</h3>
-                    The exploratory_opt.py file was inspired by bayesian optimization, but instead of calculating the spread of a collection of smooth function, it just fits any one of several convex functions to pass through each pair of adjacent sampled points.
+                    The exploratory_opt.py file was inspired by Bayesian Optimization, but instead of calculating the spread of a collection of smooth function, it just fits any one of several convex functions to pass through each pair of adjacent sampled points.
                     The resulting piecewise function can be used to achieve a similar overall result that balances exploiting the best samples found so far against exploring unknown areas, again tunable with a single parameter.
-                    This implementation uses a standin function for the expensive function that it's supposed to be applied to, by composing several sine waves of different amplitudes and frequencies.
+                    This implementation uses a stand in function for the expensive function that it's supposed to be applied to, by composing several sine waves of different amplitudes and frequencies.
 
                     <h3>Further work to do:</h3>
                     <ul>
-                        <li>Benchmark the Exploratory Optimization against Bayesian Optimization, boh for time and memory complexity.</li>
+                        <li>Benchmark the Exploratory Optimization against Bayesian Optimization, both for time and memory complexity.</li>
                         <li>This method requires having the samples at the outer bounds of the domain space, since it needs to compute a function between two known points. I'd like to find a way to modify it to not need this if possible.</li>
                         <li>This implementation currently only applies to one dimensional data in a discrete domain, and I'd like to expand it to work for n dimensions and for continuous space.</li>
                         <li>It currently outputs a new iteration of the plot, which I would like to change to an animation that is easier to use.</li>
@@ -53,7 +53,7 @@
                         $ python "path/to/file/exploratory_opt.py"<br>
                     </div>
 
-                    You can also provide optional command line arguments that let the user to change the size of the domain, the complexity of the standin target function, and the number of iteration.
+                    You can also provide optional command line arguments that let the user to change the size of the domain, the complexity of the stand in target function, and the number of iteration.
                 </p>
             </div>
             <div class="project">
