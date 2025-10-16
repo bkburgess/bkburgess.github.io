@@ -13,33 +13,45 @@
             <!-- https://www.delftstack.com/howto/python/python-in-html/ -->
             <p>
                 Hello! I presume you're here to get a sense of who I am as a programmer, and what I've done in my own time. You can probably guess my name. <br><br>
-                I've been programming in Python for several years now, but also have experience in a number of other languages: SQL, Java, Matlab, C, and more recently, Javascript, HTML, and CSS. <br><br>
-                My Bachelor's Degree is in Applied Physics, where I learned to appreciate how the balancing of different effects leads to an observed outcome, and want to explore more in understanding complex systems. Hence, Simulations and Data analysis are two of my major programming interests. 
+                My interests in programming specifically are primarily in understanding and modeling cause and effect, simulating large systems, both of which are often inspired by physics problems, since my educational background is in Applied Physics. 
+                I'm aiming to pursue work in data science and robotics, and am particularly motivated to direct my work towards causes such as healthcare an renewable energy.<br><br>
+                I've been programming in Python for several years now, but also have experience in a number of other languages: SQL, Java, Matlab, C, and more recently, Javascript, HTML, and CSS, mostly for the ability to present information more easily.<br><br>
             </p>
             <span class="social"><a href="https://github.com/bkburgess"><img src="./images/github-mark/github-mark/github-mark-white.png" alt="github icon"></a></span>
             <span class="social"><a href="https://www.linkedin.com/in/bryceburgess/"><img src="./images/LinkedIn-Logos/LinkedIn-Logos/In/Digital/White/2x/In-White-128@2x.png" alt="linkedin icon"></a></span>
             <!--<span class="social"><a href="https://www.kaggle.com/bkburgess"><img src="./images/Kaggle-Logos/kaggle-logo-transparent-300.png" alt="kaggle icon"></a></span>-->
             <div class="project">
-                <h2><a href="https://github.com/bkburgess/BayesianOptimization">Exploratory Optimization</a></h2>
-                <div class="skills">Skills/Technologies: Python</div>
+                <h2></a>Exploratory Optimization</h2>
+                <div class="skills">
+                    Skills/Technologies: Python<br>
+                    Code: <a href="https://github.com/bkburgess/BayesianOptimization">https://github.com/bkburgess/BayesianOptimization</a>
+                </div>
                 <p class="summary">
+                    <p>
+                        I developed exploratory optimization after I was exposed to Bayesian Optimization during my work at Zoox, where BO was used extensively in tuning the hyperparameters for machine learning models.
+                        While working on reimplementing BO myself to better understand it, I was curious about whether I could model the uncertainty using a simple polynomial instead of a statistical spread over several smooth curves.
+                    </p>
                     <img src="images/project_examples/ExploratoryOptimization.png" style="width: 50%" alt="Plot of a complicated smooth curve, with sampled points highlighted, and a curve showing where to search next"><br>
-                    <caption>Example image of what exploratory optimization is doing in one dimension
+                    <caption>
+                        Example image of what exploratory optimization is doing in one dimension
                         The above plot is an example of what it looks like. The red curve is the true line that it's trying to search, and so is unknown to the actual algorithm.
                         The compound blue curve is the acquisition function that it uses to determine where to search next, and the green triangles are the points it has already sampled and adjusted the blue curve to fit.
                         The vertical black line shows where it will make its next guess, determined by the maximum of the acquisition function that isn't already within the samples.
                     </caption>
                     <h3>Bayesian Optimization Overview</h3>
-                    Bayesian Optimization is a search algorithm for finding the best place to sample for an expensive to calculate function. One of the most common applications for this method is in tuning the hyperparameters of machine learning models such as neural networks.
+                    Bayesian Optimization is a search algorithm for finding the best place to sample for an expensive to calculate function. 
+                    One of the most common applications for this method is in tuning the hyperparameters of machine learning models such as neural networks.
                     It usually uses a small sample of points to shepherd a collection tens of distinct smooth curves. 
                     Then for each point in the domain, you calculate the variance in the values given by the curves. 
-                    Because the curves converge at known points, and tend to spread out in between known points, the algorithm can balance prioritizing its search between exploiting the best values found so far, against the value of exploring new areas to gather more information. 
+                    Because the curves converge at known points, and tend to spread out in between known points, the algorithm can balance prioritizing its 
+                    search between exploiting the best values found so far, against the value of exploring new areas to gather more information. 
                     Additionally, this balance can be tuned with a single input parameter.<br>
                     
                     <h3>Exploratory Optimization</h3>
                     The exploratory_opt.py file was inspired by Bayesian Optimization, but instead of calculating the spread of a collection of smooth function, it just fits any one of several convex functions to pass through each pair of adjacent sampled points.
                     The resulting piecewise function can be used to achieve a similar overall result that balances exploiting the best samples found so far against exploring unknown areas, again tunable with a single parameter.
-                    This implementation uses a stand in function for the expensive function that it's supposed to be applied to, by composing several sine waves of different amplitudes and frequencies.
+                    This implementation uses a stand in function for the expensive function that it's supposed to be applied to, by composing several sine waves of different amplitudes and frequencies.<br>
+
 
                     <h3>Further work to do:</h3>
                     <ul>
@@ -57,10 +69,15 @@
                 </p>
             </div>
             <div class="project">
-                <h2><a href="https://github.com/bkburgess/PID">PID Controller</a></h2>
-                <div class="skills">Skills/Technologies: Python</div>
+                <h2>PID Controller</h2>
+                <div class="skills">
+                    Skills/Technologies: Python<br>
+                    Code: <a href="https://github.com/bkburgess/PID">https://github.com/bkburgess/PID</a>
+                </div>
                 <p class="summary">
-                    <!--TODO: how can I get these two images to be placed side by side?  -->
+                    <p>
+                        I've known about PID controllers long before I started implementing them here, as I've been interested in robotics and methods involving coordinating several inputs to guide an output.
+                    </p>
                     <div>
                         <div class="img_float">
                             <img src="images/project_examples/PIDsmack.png" style="width: 100%" alt="Plot showing the 1d position of a robot relative to a stationary target over time, and its recovery from a sudden interference"><br>
@@ -68,16 +85,25 @@
                         <div class="img_float">
                             <img src="images/project_examples/PIDsin.png" style="width: 100%" alt="Plot showing the 1d position of a robot relative to a moving target over time"><br>
                         </div>
+                        <caption>The left figure shows the trajectory of the robot and its response to a sudden impact partway through. The right figure shows how the robot pursues a moving target.</caption>
                     </div>
-                    <caption>The left figure shows the trajectory of the robot and its response to a sudden impact partway through. The right figure shows how the robot pursues a moving target.</caption>
                     <h3>PID Overview</h3>
-                        PID controllers are widely used in robotics, where they can determine how to get the robot, or a part of a robot to the desired state quickly, efficiently, and stably, even in the face of interference and outside forces. The controller determines how much force to apply in which direction. To do this they consist of essentially three parts:<br>
+                    PID controllers are widely used in robotics, where they can determine how to get the robot, or a part of a robot to the desired state quickly, efficiently, and stably, even in the face of interference and outside forces. The controller determines how much force to apply in which direction. To do this they consist of essentially three parts:<br>
 
-                        Proportional - this just measures the difference between where the robot is, and where it's trying to get to, and provides a force proportional to that distance. If this were the only component, then the robot would oscillate around the target point with amplitude equal to the initial difference, rather than stay consistently at or near the target.<br>
-                        Derivative - this measures how much progress the robot has made in each computation cycle, which helps the robot avoid overshooting or oscillating around the target, by providing a slight damping effect proportional to the progress it's already made.<br>
-                        Integrative - this measures how much progress the robot has gone, and is primarily useful for compensating for outside effects like external forces, or changes in the robots mass, which affect the relationship between the robot's force applied and the motion that results. This can sometimes be left out in simpler application<br>
+                    <ul>
+                        <li>
+                            [P]roportional - this just measures the difference between where the robot is, and where it's trying to get to, and provides a force proportional to that distance. If this were the only component, then the robot would oscillate around the target point with amplitude equal to the initial difference, rather than stay consistently at or near the target.<br>
+                        </li>
+                        <li>
+                            [D]erivative - this measures how much progress the robot has made in each computation cycle, which helps the robot avoid overshooting or oscillating around the target, by providing a slight damping effect proportional to the progress it's already made.<br>
+                        </li>
+                        <li>
+                            [I]ntegrative - this measures how much progress the robot has gone, and is primarily useful for compensating for outside effects like external forces, or changes in the robots mass, which affect the relationship between the robot's force applied and the motion that results. This can sometimes be left out in simpler application<br>
+                        </li>
+                    </ul>
 
-                        Each of these components is multiplied by a tuned gain value to determine the influence that they each have on the force applied.
+                    Each of these components is multiplied by a tuned gain value to determine the influence that they each have on the force applied.<br>
+                    <!--TODO: how can I get these two images to be placed side by side?  -->
                     <h3>Further work to do:</h3>
                     <ul>
                         <li>The present version is single dimensional, I'd like to expand it to multiple dimensions, preferably an arbitrary number</li>
@@ -94,20 +120,27 @@
                 </p>
             </div>
             <div class="project">
-                <h2><a href="https://github.com/bkburgess/Epidemiology">Epidemiology</a></h2>
-                <div class="skills">Skills/Technologies: Python</div>
+                <h2>Epidemiology</h2>
+                <div class="skills">
+                    Skills/Technologies: Python<br>
+                    Code: <a href="https://github.com/bkburgess/Epidemiology">https://github.com/bkburgess/Epidemiology</a>
+                </div>
                 <p class="summary">
+                    <p>
+                        I first encountered SIRD modeling from a youtube video, and was interested by the complexity and dynamic properties of this kind of interaction, and as I worked on it, thought of more additional ways to add in the kinds of mechanics that one might see in real life.
+                    </p>
                     <!--TODO: how can I get these two images to be placed side by side?  -->
                     <div>
                         <img src="images/project_examples/SIRD.png" style="width: 50%" alt="Plot showing the status of the population over time during a disease"><br>
                     </div>
                     <caption>Plot showing the status of the population over time during a disease.</caption>
                     <h3>SIRD</h3>
-                        This repository is a place for me to work on epidemiology simulations, primarily centered on using the SIRD model.
+                    This repository is a place for me to work on epidemiology simulations, primarily centered on using the SIRD model.
 
-                        SIRD stands for Susceptible, Infected, Recovered, and Dead. The idea is that the population of a a densely populated area will fall into one of these four categories at any given time, and we can use estimates and heuristics to model how the disease progresses over time.
-                        Further work
+                    SIRD stands for Susceptible, Infected, Recovered, and Dead. The idea is that the population of a a densely populated area will fall into one of these four categories at any given time, and we can use estimates and heuristics to model how the disease progresses over time.
 
+
+                    Further work:
                     <ul>
                         <li>Expand this to consider multiple cities simultaneously with travel between them</li>
                         <li>Consider multiple diseases simultaneously</li>
@@ -123,8 +156,41 @@
                 </p>
             </div>
             <div class="project">
-                <h2><a href="https://github.com/bkburgess/PatientChoice">Patient Choice</a></h2>
-                <div class="skills">Skills/Technologies: Python, Pandas</div>
+                <h2>Politicians' Voting Patterns</h2>
+                <div class="skills">
+                    Skills/Technologies: Python, Pandas, Seaborn, SK-learn, Bokeh, Regex<br>
+                    Code: <a href="https://www.kaggle.com/code/bkburgess/politician-voting-clusters">https://www.kaggle.com/code/bkburgess/politician-voting-clusters</a>
+                </div>
+                <p class="summary">
+                    <img src="images/project_examples/Politicians_116.png" style="width: 50%" alt="Scatterplot of congress members in abstracted voting space"><br>
+                    This is an analysis of how the politicians in the 116th (2019-2021) Congress voted in relation to each other, focusing on issues. I used a dataset of the bills they voted on and how each member voted, which I then
+                    had to exclude all the bills that were regular procedural tasks, rather than bills that affected policy. From there I used Principal Component Analysis to reduce the dimensionality
+                    so that the result could be shown in a 2d plot, and color coded members based on their party affiliation. <br><br>
+                    Further Work:
+                    <ul>
+                        <li>Break down bills by subject</li>
+                        <li>Extend to 3D plot</li>
+                        <li>Repeat for other congresses</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="project">
+                <h2>Exploratory Analysis of Suicide Data</h2>
+                <div class="skills">
+                    Skills/Technologies: Python, Pandas, Seaborn<br>
+                    Code: <a href="https://www.kaggle.com/code/bkburgess/suicide-data-exploratory">https://www.kaggle.com/code/bkburgess/suicide-data-exploratory</a>
+                </div>
+                <p class="summary">
+                    <img src="images/project_examples/SuicidesGDPcapita.png" style="width: 50%" alt="A plot showing that increasing GDP per capita correlates with lower suicide rates"><br>
+                    Exploratory analysis on Kaggle of international suicide rates from 1985-2016 in a Kaggle Notebook
+                </p>
+            </div>
+            <div class="project">
+                <h2>Patient Choice</h2>
+                <div class="skills">
+                    Skills/Technologies: Python, Pandas<br>
+                    Code: <a href="https://github.com/bkburgess/PatientChoice">https://github.com/bkburgess/PatientChoice</a>
+                </div>
                 <p class="summary">
                     This is a project I worked on at TU Berlin, to help the German legislature decide how they might be able to streamline their healthcare system. 
                     I was provided data about individual hospitals, demographic data, and patient healthcare data sourced from health insurance companies in Germany with the goal of estimating what
@@ -133,27 +199,6 @@
                     and insurance network were nonfactors because of the nature of Germany's healthcare system. <br><br>
                     Ultimately, I found that the single most impactful factor was simply the travel time between the patients' home location and the hospital. <br><br>
                     Note that because I was working with very sensitive personal health information, I am not providing any of the data I was using, nor anything that could expose that information.
-                </p>
-            </div>
-            <div class="project">
-                <h2><a href="https://www.kaggle.com/code/bkburgess/politician-voting-clusters">Politicians' Voting Patterns</a></h2>
-                <div class="skills">Skills/Technologies: Python, Pandas, Seaborn</div>
-                <p class="summary">
-                    An analysis of politicians' voting patterns from the 116th congress (2019-2021) using Principal Component Analysis, to see which congress members voted most similarly to each other.
-                </p>
-            </div>
-            <div class="project">
-                <h2><a href="https://www.kaggle.com/code/bkburgess/suicide-data-exploratory">Exploratory Analysis of Suicide Data</a></h2>
-                <div class="skills">Skills/Technologies: Python, Pandas, Seaborn</div>
-                <p class="summary">
-                    Exploratory analysis on Kaggle of international suicide rates from 1985-2016 in a Kaggle Notebook
-                </p>
-            </div>
-            <div class="project">
-                <h2><a href="https://github.com/bkburgess/CraigsListHousingScraper">Configurable Web Scraper for Apartments and Housing</a></h2>
-                <div class="skills">Skills/Technologies: Python, BeautifulSoup, numpy, requests</div>
-                <p class="summary">
-                    Simple web scraper for craigslist to find and extract housing data in a python script
                 </p>
             </div>
             <div class="project">
@@ -171,10 +216,13 @@
                 <p class="summary"></p>
             </div>
             <div class="project">
-                <h2><a href="https://github.com/bkburgess/DragonCurve">Dragon Curve Fractal</a></h2>
-                <div class="skills">Skills/Technologies: Python</div>
-                <img src="images/project_examples/DragonCurve.png" style="width: 50%" alt="The dragon curve fractal"><br>
+                <h2>Dragon Curve Fractal</h2>
+                <div class="skills">
+                    Skills/Technologies: Python<br>
+                    Code: <a href="https://github.com/bkburgess/DragonCurve">https://github.com/bkburgess/DragonCurve</a>
+                </div>
                 <p class="summary">
+                    <img src="images/project_examples/DragonCurve.png" style="width: 50%" alt="The dragon curve fractal"><br>
                     This script generates the dragon fractal, which is the logical extension of folding a piece of paper in half over and over, and then unfurling it
                     so that each of the bends is 90 degrees. To do this, this script encodes directions as a string of numbers, and recurrently duplicates and rotates
                     the string to form a new string which represents the next iteration of the fractal. It finally then needs to decode the resulting string back into 
